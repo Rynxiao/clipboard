@@ -9,6 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@xkeshi/vue-qrcode": "^1.0.0",
     "axios": "^0.18.0",
     "element-ui": "^2.4.6",
     "register-service-worker": "^1.0.0",

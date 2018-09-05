@@ -5,7 +5,7 @@
       <p>打开微信小程序《剪切板》扫一扫</p>
     </div>
     <div class="login__item login__mini">
-      <qrcode :value="qrStr" :options="{ size: 200 }"></qrcode>
+      <div><img src="../assets/clipboard.jpeg" width="200" height="200" /></div>
       <p>小程序《剪切板》</p>
     </div>
   </div>
@@ -15,6 +15,7 @@
 import Vue from 'vue'
 import VueQrcode from '@xkeshi/vue-qrcode'
 import uuidv4 from 'uuid/v4'
+import { login } from '../api'
 
 Vue.component(VueQrcode.name, VueQrcode)
 
@@ -27,6 +28,9 @@ export default {
   },
   mounted () {
     this.qrStr = uuidv4()
+    this.$nextTick(_ => {
+      login({ nonce: this.qrStr })
+    })
   }
 }
 </script>

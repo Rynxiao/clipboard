@@ -1,5 +1,21 @@
 import api from './common'
 
+export function login (data) {
+  return api({
+    url: 'login',
+    method: 'post',
+    data
+  })
+}
+
+export function register (data) {
+  return api({
+    url: 'regist',
+    method: 'post',
+    data
+  })
+}
+
 export function getContentList (params) {
   return api({
     url: 'query',

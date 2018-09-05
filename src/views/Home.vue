@@ -224,7 +224,7 @@ export default {
       this.getList()
     },
     handleSelectionChange (selection) {
-      console.log(selection)
+      // console.log(selection)
     },
     async handleModify (row) {
       if (!row.content) {

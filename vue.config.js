@@ -2,7 +2,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/paste': {
-        target: 'http://paste.potal.cn',
+        target: 'https://paste.potal.cn',
         secure: false,
         changeOrigin: true
       }

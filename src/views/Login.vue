@@ -14,7 +14,7 @@
 <script>
 import Vue from 'vue'
 import VueQrcode from '@xkeshi/vue-qrcode'
-import uuidv4 from 'uuid/v4'
+// import uuidv4 from 'uuid/v4'
 import { login } from '../api'
 
 Vue.component(VueQrcode.name, VueQrcode)
@@ -27,9 +27,11 @@ export default {
     }
   },
   mounted () {
-    this.qrStr = uuidv4()
+    // this.qrStr = uuidv4()
     this.$nextTick(_ => {
-      login({ nonce: this.qrStr })
+      console.log('nonce', this.qrStr)
+      // register({ userid: '8aff88971e29df074a8b3eab0b7e65a1', nonce: this.qrStr })
+      login({ nonce: 'a1c0cb10-e59c-4ac8-839e-270069dfd4ec' })
     })
   }
 }

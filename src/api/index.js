@@ -18,14 +18,14 @@ export function register (data) {
 
 export function getContentList (params) {
   return api({
-    url: 'query',
+    url: 'paste/query',
     params
   })
 }
 
 export function insertContent (data) {
   return api({
-    url: 'post',
+    url: 'paste/post',
     method: 'post',
     data
   })
@@ -33,7 +33,7 @@ export function insertContent (data) {
 
 export function updateContent (data) {
   return api({
-    url: 'update',
+    url: 'paste/update',
     method: 'post',
     data
   })
@@ -41,7 +41,7 @@ export function updateContent (data) {
 
 export function deleteContent (data) {
   return api({
-    url: 'delete',
+    url: 'paste/delete',
     method: 'post',
     data
   })

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export default async function api (config) {
+export default async function api(config) {
   const defaultConfig = {
-    baseURL: '/',
+    baseURL: 'api/',
     method: 'get',
     params: {},
     timeout: 1000,

@@ -133,7 +133,7 @@ import {
 
 export default {
   name: 'home',
-  data () {
+  data() {
     return {
       list: [],
       tags: [
@@ -151,11 +151,11 @@ export default {
       total: 0
     }
   },
-  async mounted () {
+  async mounted() {
     this.getList()
   },
   methods: {
-    async getList () {
+    async getList() {
       const res = await getContentList({
         userid: 'admin',
         page: this.currentPage,
@@ -164,13 +164,13 @@ export default {
       this.list = res.data.data
       this.total = res.data.total
     },
-    filterTag (value, row) {
+    filterTag(value, row) {
       return row.tag === value
     },
-    rowClick (row) {
+    rowClick(row) {
       // alert(row.content)
     },
-    cellClick (scope) {
+    cellClick(scope) {
       const index = scope.$index
       this.list[index].edit = true
       this.list = [...this.list]
@@ -178,19 +178,19 @@ export default {
         this.$refs['bindInputEditRef' + index].$refs.input.focus()
       })
     },
-    onAddValue () {
+    onAddValue() {
       this.centerDialogVisible = true
       this.$nextTick(_ => {
         this.$refs.inputTextRef.$refs.input.focus()
       })
     },
-    selectTag (tag) {
+    selectTag(tag) {
       this.selectedTagText = tag.text
     },
-    onCancel () {
+    onCancel() {
       this.centerDialogVisible = false
     },
-    async onConfirmed () {
+    async onConfirmed() {
       this.centerDialogVisible = false
       if (!this.inputValue) {
         this.$message.error('请您输入要复制的文本')
@@ -200,13 +200,13 @@ export default {
       await this.getList()
       this.inputValue = ''
     },
-    showInput () {
+    showInput() {
       this.newVisible = true
       this.$nextTick(_ => {
         this.$refs.saveTagInput.$refs.input.focus()
       })
     },
-    handleInputConfirm () {
+    handleInputConfirm() {
       let newTag = this.newTag
       if (newTag) {
         this.tags.push({ text: this.newTag, value: this.newTag })
@@ -214,19 +214,19 @@ export default {
       this.newVisible = false
       this.newTag = ''
     },
-    handleCurrentChange (page) {
+    handleCurrentChange(page) {
       this.currentPage = page
       this.$nextTick(_ => {
         this.getList()
       })
     },
-    searchList () {
+    searchList() {
       this.getList()
     },
-    handleSelectionChange (selection) {
+    handleSelectionChange(selection) {
       // console.log(selection)
     },
-    async handleModify (row) {
+    async handleModify(row) {
       if (!row.content) {
         this.$message.error('请您修改要复制的文本')
         return
@@ -242,7 +242,7 @@ export default {
         this.$message({ type: 'success', message: '修改成功!' })
       }
     },
-    handleDelete (row) {
+    handleDelete(row) {
       this.$confirm('您要删除这条记录么?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

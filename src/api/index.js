@@ -1,6 +1,6 @@
 import api from './common'
 
-export function login (data) {
+export function login(data) {
   return api({
     url: 'login',
     method: 'post',
@@ -8,7 +8,7 @@ export function login (data) {
   })
 }
 
-export function register (data) {
+export function register(data) {
   return api({
     url: 'regist',
     method: 'post',
@@ -16,14 +16,14 @@ export function register (data) {
   })
 }
 
-export function getContentList (params) {
+export function getContentList(params) {
   return api({
     url: 'paste/query',
     params
   })
 }
 
-export function insertContent (data) {
+export function insertContent(data) {
   return api({
     url: 'paste/post',
     method: 'post',
@@ -31,7 +31,7 @@ export function insertContent (data) {
   })
 }
 
-export function updateContent (data) {
+export function updateContent(data) {
   return api({
     url: 'paste/update',
     method: 'post',
@@ -39,7 +39,7 @@ export function updateContent (data) {
   })
 }
 
-export function deleteContent (data) {
+export function deleteContent(data) {
   return api({
     url: 'paste/delete',
     method: 'post',
